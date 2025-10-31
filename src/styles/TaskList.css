@@ -1,0 +1,58 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 120px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  transition: all 0.3s ease;
+  border: 2px dashed transparent;
+}
+
+.task-list.drag-over {
+  background: var(--bg-primary);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.task-list-empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 2px dashed var(--border-color);
+}
+
+.task-list-empty::before {
+  content: '';
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: block;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  border: 2px dashed var(--border-color);
+  position: relative;
+}
+
+.task-list-empty::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  opacity: 0.3;
+}
+
+.task-list-empty p {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+}
+
